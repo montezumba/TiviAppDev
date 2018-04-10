@@ -6,10 +6,12 @@ Here you will find:
 - A "Hello World" project (a.k.a Demo Provider)
 - A guide on how to upload your working Provider to our main repository
  
- If you are still not fimiliar with the TiviApp application, please visit our [main site](https://tiviapp.cloudaccess.host)
+ If you are still not fimiliar with the TiviApp application, please visit our [main site](https://tiviapp.cloudaccess.host).
  
- # A Quick Guide
+ ## A Quick Guide
  
+ The simpliest way of getting started is to clone this repository and start exploring the Demo Provider project.
+ The compiled and working version of Demo Provider has already been uploaded to the official repository and can be activated from the Settings menu in TiviApp.
 
 
 ## Welcome to GitHub Pages
