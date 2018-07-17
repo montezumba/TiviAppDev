@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.treynix.helloworld">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name="HelloWorldApplication"
+        android:theme="@style/AppTheme">
+
+        <service android:name="HelloWorldService" >
+            <intent-filter>
+                <action android:name="com.treynix.helloworld.ACTION_ADDON_REQUEST" />
+                <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_REGISTER" />
+                <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_KILL" />
+            </intent-filter>
+
+            <meta-data android:name="playlist_support" android:value="true"/>
+            <meta-data android:name="tvguide_support" android:value="true"/>
+            <meta-data android:name="video_support" android:value="true"/>
+
+
+        </service>
+
+    </application>
+
+</manifest>
