@@ -1,4 +1,4 @@
-# Welcome Developers!
+# Welcome Developers and Content Owners!
 
 This GitHub page contains all the information you need for creating and managing your own TiviApp Content Provider. 
 Here you will find:
@@ -8,10 +8,17 @@ Here you will find:
  
  If you are still not fimiliar with the TiviApp application, please visit our [main site](https://tiviapp.cloudaccess.host).
  
+ 
  ## A Quick Guide
  
- The simpliest way of getting started is to clone this repository and start exploring the Demo Provider project.
- The compiled and working version of Demo Provider has already been uploaded to the official repository and can be activated from the Settings menu in TiviApp.
+ A Content Provider is basically a third-party piece of code that provides usefull content for TiviApp users. This content can be either:
+ - One or more playlists (Channel Lists) in M3U format
+ - One or more EPG (TV Guides) in XMLTV format
+ - A specific stream (Channel) in one of the supported formats 
+ 
+ The simpliest way of getting started is to clone this repository and start exploring the demo projects.
+ 
+ 
 
 
 ## Welcome to GitHub Pages
