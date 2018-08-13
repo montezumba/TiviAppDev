@@ -1,17 +1,31 @@
-# Welcome Developers!
+# Welcome Developers and Content Owners!
 
 This GitHub page contains all the information you need for creating and managing your own TiviApp Content Provider. 
 Here you will find:
+- An introduction the Content Provider concept
 - A quick guide on how to get started with developing your own Content Provider
 - A "Hello World" project (a.k.a Demo Provider)
 - A guide on how to upload your working Provider to our main repository
  
  If you are still not fimiliar with the TiviApp application, please visit our [main site](https://tiviapp.cloudaccess.host).
  
- ## A Quick Guide
  
- The simpliest way of getting started is to clone this repository and start exploring the Demo Provider project.
- The compiled and working version of Demo Provider has already been uploaded to the official repository and can be activated from the Settings menu in TiviApp.
+ ## Introduction
+ 
+ A Content Provider is basically a third-party piece of code (sometimes called "plugin" or "addon") that provides usefull content for TiviApp users. This content can be either:
+ - One or more playlists (Channel Lists) in M3U format
+ - One or more EPG (TV Guides) in XMLTV format
+ - A specific stream (Channel) in one of the supported formats 
+ 
+ Each Content Provider is hosted on a repository (server for example), which is described by a special JSON file. TiviApp has one official such repository embedded within the main application. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON.
+ 
+ There are two types of Providers that are currently supported by TiviApp:
+ - Android Provider: that comes in a form of an Android application. This kind of provider is demonstrated by the "HelloWorld" Android project in this repository
+ - Web Provider: that comes in a form of a web application (can be either client-side such as .html/.js files or a server side such as .php/.aspx). This kind of provider is demonstrated by the "HelloWorldWeb" web project.
+ 
+ The simpliest way of getting started is to clone this repository and start exploring the demo projects. 
+ 
+ 
 
 
 ## Welcome to GitHub Pages
