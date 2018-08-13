@@ -9,8 +9,7 @@ Here you will find:
  
  If you are still not fimiliar with the TiviApp application, please visit our [main site](https://tiviapp.cloudaccess.host).
  
- 
- ## Introduction
+## Introduction
  
  A Content Provider is basically a third-party piece of code (sometimes called "plugin" or "addon") that provides usefull content for TiviApp users. This content can be either:
  - One or more playlists (Channel Lists) in M3U format
