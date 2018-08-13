@@ -65,7 +65,7 @@ public class HelloWorldMain extends AddonMain {
      * </ul>
      * Each request has the following runtime restrictions:
      * <ul>
-     *     <li>A local limit as defined by {@link AddonConfig#MAX_ADDON_EXEC_TIME}: Imposes the maximal allowed time for the execution of a single request. Eventhough you may configure this value, it is still recommended to set this value as low as possible to allow the system to detect deadlocks</li>
+     *     <li>A local limit as defined by {@link AddonConfig#MAX_ADDON_EXEC_TIME}: Imposes the maximal allowed time for the execution of a single request. Even though you may configure this value upon the initialization of this class, it is still recommended to set this value as low as possible to allow the system to detect potential deadlocks.</li>
      *     <li>A global limit that is defined by the sever (TiviApp), which requires that all requests will be completed within 1 minute.</li>
      * </ul>
      * @param params a set of parameters for this request.
@@ -184,15 +184,37 @@ public class HelloWorldMain extends AddonMain {
 
     }
 
+    /**
+     * This method is invoked upon the initialization of this provider.
+     * You may use this method to perform any general initializations that do not depend on any specific request from TiviApp.<br/>
+     * NOTE: This method is blocking. To avoid starvation of pending requests from the server you should use {@link com.montezumba.lib.utils.WorkerFactory.Worker} for time-consuming logic.
+     * @throws AddonException should be thrown for any exception that is found during the execution of this method.
+     */
     @Override
     protected void onInit() throws AddonException {}
 
+    /**
+     * This method is invoked upon the destruction of this provider.
+     * You may use this method to perform wrap-up logic such as: stopping pending data transactions, closing files, cleaning-up memory and etc.<br/>
+     * NOTE: This method is blocking. To avoid starvation of pending requests from the server you should use {@link com.montezumba.lib.utils.WorkerFactory.Worker} for time-consuming logic.
+     * @throws AddonException should be thrown for any exception that is found during the execution of this method.
+     */
     @Override
     protected void onDestroy() {}
 
+    /**
+     * This method is invoked when the server (TiviApp) requests this provider to terminate its currently-processed request.
+     * You should use this method to cancel any pending activities and ensure that this provide is ready again to receive new requests from TiviApp.<br/>
+     * NOTE: This method is blocking. To avoid starvation of pending requests from the server you should use {@link com.montezumba.lib.utils.WorkerFactory.Worker} for time-consuming logic.
+     * @throws AddonException should be thrown for any exception that is found during the execution of this method.
+     */
     @Override
     protected void onCancel() {}
 
+    /**
+     * This method is invoked when the server (TiviApp) requests to clone
+     * @return
+     */
     @Override
     protected HelloWorldMain clone() {
         return new HelloWorldMain();

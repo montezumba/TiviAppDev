@@ -31,6 +31,7 @@ public class HelloWorldConfig extends AddonConfig {
                 );
 	}
 
+
 	public static final Map<String, SparseArray<String>> ENCODED_CHANNELS = new HashMap<String, SparseArray<String>>() {{
 	    put("demo", new SparseArray<String>() {{
             put(0, "https://download.blender.org/durian/movies/Sintel.2010.4k.mkv");
