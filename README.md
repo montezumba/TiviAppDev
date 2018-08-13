@@ -30,7 +30,7 @@ Here you will find:
  
  The simpliest way of getting started is to clone this repository and start exploring the demo projects. 
  
- ![Image](https://github.com/montezumba/TiviAppDev/raw/master/Resources/drama_fullscreen.PNG)
+ ![Image](https://github.com/montezumba/TiviAppDev/raw/master/Resources/drama_fullscreen.PNG)![Image](https://github.com/montezumba/TiviAppDev/raw/master/Resources/drama_fullscreen.PNG)
 
 
 ## Welcome to GitHub Pages
