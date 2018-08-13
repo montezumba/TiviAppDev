@@ -22,6 +22,12 @@ Here you will find:
  - Android Provider: that comes in a form of an Android application. This kind of provider is demonstrated by the "HelloWorld" Android project in this repository
  - Web Provider: that comes in a form of a web application (can be either client-side such as .html/.js files or a server side such as .php/.aspx). This kind of provider is demonstrated by the "HelloWorldWeb" web project.
  
+ Each Provider is basically a small server that handles various requests from the TiviApp client. Therefore your code should be designed according to the following basic principles:
+ 1. Efficiency. Upon receiving a request from the client, the server should retrieve a response as quickly as possible. If your code is unbale to return a response to the client within a reasonable amount of time - a timeout will be invoked and your information will not be handled by the client.
+ 2. Memoryless. Your code should be responding only to the current request. There is no need to store or rely on data from previous request as it most likely irrelevant.
+ 3. Responsive. You shold respond to any request from the server, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
+ 4. Light (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
+ 
  The simpliest way of getting started is to clone this repository and start exploring the demo projects. 
  
  ![Image](https://github.com/montezumba/TiviAppDev/raw/master/Resources/drama_fullscreen.PNG)
