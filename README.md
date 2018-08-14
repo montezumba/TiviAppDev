@@ -18,8 +18,8 @@ Here you will find:
 
  
  There are two types of Providers that are currently supported by TiviApp:
- - **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorldProvider"](HelloWorldProvider) Android project in this repository
- - **Web Provider**: A Provider that comes in a form of a web application (can be either client-side such as .html/.js files or a server side such as .php/.aspx). This kind of provider is demonstrated by the ["HelloWorldProviderWeb"](HelloWorldProviderWeb) web project.
+ - **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android project in this repository
+ - **Web Provider**: A Provider that comes in a form of a web application (can be either client-side such as .html/.js files or a server side such as .php/.aspx). This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
  
  Each Provider is basically a small server that handles various requests from the TiviApp client. Therefore your code should be designed according to the following basic principles:
  1. **Efficiency**. Upon receiving a request from the client, the server should retrieve a response as quickly as possible. If your code is unbale to return a response to the client within a reasonable amount of time - a timeout will be invoked and your information will be ignored by TiviApp.
@@ -29,7 +29,7 @@ Here you will find:
  
  The simpliest way of getting started is to clone this repository and start exploring the demo projects. 
  
- ![Image](https://github.com/montezumba/TiviAppDev/raw/master/Resources/drama_fullscreen.PNG)
+ ![Image](Resources/drama_fullscreen.PNG)
 
 ## Getting Started
 
