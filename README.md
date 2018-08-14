@@ -27,12 +27,12 @@ Here you will find:
  3. **Responsive**. You should respond to any request from the server, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
  4. **Compact** (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
  
- The simpliest way of getting started is to clone this repository and start exploring the demo projects. 
+
  
  ![Image](Resources/drama_fullscreen.PNG)
 
 ## Getting Started
-
+ The simpliest way of getting started is to clone this repository and start exploring the demo projects. The following sections will guide you through the neccessary steps for getting the "Hello World" projects up and running on your machine. So use your favorite Git client to cone this repository at: 
  
  Each Content Provider is hosted on a repository (server for example), which is described by a special JSON file. TiviApp has one official such repository embedded within the main application. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON.
 ## Welcome to GitHub Pages
