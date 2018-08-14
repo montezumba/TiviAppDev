@@ -7,7 +7,7 @@ Here you will find:
 - "Hello World" projects overview
 - A guide on how to upload your working Provider to our main repository
  
- If you are still not fimiliar with the TiviApp application, please visit our [website](https://tiviapplive.com).
+ If you are still not fimiliar with the TiviApp application, please visit our [website](http://tiviapplive.com).
  
 ## Introduction
  
