@@ -42,7 +42,14 @@ Here you will find:
  - Android SDK support for API 27. 
  - An Android device running Android 4.2 or higher
  
- After clonning the repository, just 
+ After clonning the repository (for example to: C:\TiviAppDev), just follow these steps:
+ 1. Open Android Studio and select "Open an existing Android Project"
+ 2. Select the HelloWorld project at C:\TiviAppDev\HelloWorld
+ 3. If a message appears that request further configuration, click on "Configure"
+ 4. Build the project and run on your Android device.
+ 5. This project has no default Activity, so you shouldn't see any change after clicking on "Run"
+ 6. Open TiviApp, choose "Settings" and select the "Providers" tab. You should see the following new Provider in that list:
+ 
  
  Each Content Provider is hosted on a repository (server for example), which is described by a special JSON file. TiviApp has one official such repository embedded within the main application. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON.
 ## Welcome to GitHub Pages
