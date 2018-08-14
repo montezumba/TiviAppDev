@@ -40,7 +40,9 @@ Here you will find:
  This type of provider is the most powerfull option and is best suited for Android Developers who wish to add some non-trivial logic that should be executed on a native environment. For this, you will need to have some knowledge of developing Android applications and the following environment set up:
  - Android Studio 3.1.3 or above.
  - Android SDK support for API 27. 
- - An Android device running Android 
+ - An Android device running Android 4.2 or higher
+ 
+ After clonning the repository, just 
  
  Each Content Provider is hosted on a repository (server for example), which is described by a special JSON file. TiviApp has one official such repository embedded within the main application. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON.
 ## Welcome to GitHub Pages
