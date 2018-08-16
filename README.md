@@ -46,6 +46,7 @@ Here you will find:
  1. Open Android Studio and select "Open an existing Android Project"
  2. Select the HelloWorld project at C:\TiviAppDev\HelloWorld
  3. If a message appears that request further configuration, click on "Configure"
+ ![image](Resources/drama_fullscreen.PNG)
  4. Build the project and run on your Android device.
  5. This project has no default Activity, so you shouldn't see any change after clicking on "Run"
  6. Open TiviApp, choose "Settings" and select the "Providers" tab. You should see the following new Provider in that list:
