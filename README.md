@@ -11,20 +11,20 @@ Here you will find:
  
 ## Introduction
  
- A Content Provider is basically a third-party piece of code (sometimes called "plugin" or "addon") that provides usefull content for TiviApp users. This content can be either:
- - One or more playlists (**Channel Lists**) in M3U format
- - One or more EPG (**TV Guides**) in XMLTV format
- - A specific stream (**Channel**) in one of the supported formats 
+ A Content Provider is basically a third-party piece of code (sometimes called "plugin" or "addon") that can provide usefull content for TiviApp users. This content can be either:
+ - One or more playlists (**Channel Lists**) in _M3U_ format
+ - One or more EPG (**TV Guides**) in _XMLTV_ format
+ - A playable video/audio stream (**Channel**) in one of the supported formats 
 
  
  There are two types of Providers that are currently supported by TiviApp:
- - **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android project in this repository
- - **Web Provider**: A Provider that comes in a form of a web application (can be either client-side such as .html/.js files or a server side such as .php/.aspx). This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
+ - **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android Studio project in this repository
+ - **Web Provider**: A Provider that comes in a form of a web application. This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
  
- Each Provider is basically a small server that handles various requests from the TiviApp client. Therefore your code should be designed according to the following basic principles:
- 1. **Efficiency**. Upon receiving a request from the client, the server should retrieve a response as quickly as possible. If your code is unbale to return a response to the client within a reasonable amount of time - a timeout will be invoked and your information will be ignored by TiviApp.
+ A Provider can be also viewed as a small _server_ that handles various requests from the TiviApp client. Therefore your code should be designed and developed according to the following basic principles:
+ 1. **Efficiency**. Upon receiving a request from the client, the server should provide a response as quickly as possible. If your code is unbale to send a response to the client within a reasonable amount of time - a timeout will be invoked and your content will be ignored by TiviApp.
  2. **Memoryless**. Your code should respond only to the given request. There is no need to store or rely on data from previous requests as it most likely irrelevant.
- 3. **Responsive**. You should respond to any request from the server, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
+ 3. **Responsive**. You should provide a response to any request from the client, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
  4. **Compact** (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
  
 
@@ -33,7 +33,7 @@ Here you will find:
 
 ## Getting Started
 
- The simpliest way of getting started is to clone this repository and start exploring the demo projects. The following sections will guide you through the neccessary steps for getting the "Hello World" projects up and running on your machine. So use your favorite Git client to cone this repository at: ```https://github.com/montezumba/TiviAppDev.git``` and let's get started...
+ The simpliest way of getting started is to clone this repository and start exploring the demo projects. The following sections will guide you through the neccessary steps for getting the "Hello World" projects up and running on your machine. So use your favorite Git client to cone this repository at: ```https://github.com/montezumba/TiviAppDev.git``` and let's get started!
  
 ### Android Provider
  
@@ -43,16 +43,19 @@ Here you will find:
  - An Android device running Android 4.2 or higher
  
  After clonning the repository (for example to: C:\TiviAppDev), just follow these steps:
- 1. Open Android Studio and select "Open an existing Android Project"
+ 1. Open Android Studio and select "_Open an existing Android Project_"
  2. Select the HelloWorld project at C:\TiviAppDev\HelloWorld
- 3. If a message appears that request further configuration, click on "Configure"
+ 3. If a message appears that request further configuration, click on "_Configure_"
  ![image](Resources/AndroidConfigure.PNG)
  4. Build the project and run on your Android device.
- 5. This project has no default Activity, so you shouldn't see any change after clicking on "Run"
+ 5. This project has no default Activity, so you shouldn't see anything running after clicking on "_Run_"
  6. Open TiviApp, choose "Settings" and select the "Providers" tab. You should see the following new Provider in that list:
  
  
- Each Content Provider is hosted on a repository (server for example), which is described by a special JSON file. TiviApp has one official such repository embedded within the main application. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON.
+ Each Content Provider is hosted on a repository (server for example), which is described by a special _JSON_ file. TiviApp has one such repository embedded within the main application - the _Official TiviApp Repository_. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON. (see below)
+ 
+ 
+ 
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/montezumba/TiviAppDev/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
