@@ -49,11 +49,13 @@ Here you will find:
  ![image](Resources/AndroidConfigure.PNG)
  4. Build the project and run on your Android device.
  5. This project has no default Activity, so you shouldn't see anything running after clicking on "_Run_"
- 6. Open TiviApp, choose "Settings" and select the "Providers" tab. You should see the following new Provider in that list:
+ 6. Open TiviApp, choose "_Settings_" and select the "_Providers_" tab. You should see the following new Provider in that list:
  
  
  Each Content Provider is hosted on a repository (server for example), which is described by a special _JSON_ file. TiviApp has one such repository embedded within the main application - the _Official TiviApp Repository_. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON. (see below)
- 
+
+### Web Provider
+ This type of provider is suited for 
  
  
 ## Welcome to GitHub Pages
