@@ -55,7 +55,10 @@ Here you will find:
  Each Content Provider is hosted on a repository (server for example), which is described by a special _JSON_ file. TiviApp has one such repository embedded within the main application - the _Official TiviApp Repository_. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON. (see below)
 
 ### Web Provider
- This type of provider is suited for 
+ This type of provider is suited for quick and simple content providers (usually ones that already have a website or an IPTV server running). To setup a Web Provider you will need a basic HTML/JS knowledge (or PHP/AJAX/ASP.NET if you are planning to run it on the server side)
+ A typical Web Provider consists of the following two files:
+ 1. A _Virtual Repo_ file (see below for more details). This file should have the _*.json_ extenssion and point to one or more _Web Provider files_
+ 2. A _Web Provider_ file (with _html/js/php/aspx_ extenssion) that holds the server logic.
  
  
 ## Welcome to GitHub Pages
