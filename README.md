@@ -73,6 +73,10 @@ Here you will find:
  ![Image](Resources/web_provider.png)
  ![Image](Resources/web_playlist.png)
  
+## Development
+
+ In this section we will explore the basic that each 
+ 
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/montezumba/TiviAppDev/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
