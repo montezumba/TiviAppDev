@@ -75,7 +75,12 @@ Here you will find:
  
 ## Development
 
- In this section we will explore the basic that each 
+ In this section we will provide an overview the basic concepts of Provider Development. We assume here that you already cloned this repo and you know how to build and run the corresponding demo projects.
+ 
+### Android Provider
+
+If we explore the demo project we can see the observe the following project strucure:
+* [HelloWorldApplication](HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldApplication.java)
  
 ## Welcome to GitHub Pages
 
