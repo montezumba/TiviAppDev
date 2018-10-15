@@ -80,7 +80,7 @@ Here you will find:
 ### Android Provider
 
 If we explore the demo project we can see the observe the following project strucure:
-* [HelloWorldApplication](HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldApplication.java)
+* [HelloWorldApplication.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldApplication.java)
  
 ## Welcome to GitHub Pages
 
