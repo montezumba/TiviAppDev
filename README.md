@@ -55,12 +55,12 @@ Here you will find:
  This type of provider is suited for quick and simple content providers (usually ones that already have a website or an IPTV server running). To setup a Web Provider you will need some basic knowledge in web development, specifically in javascript. 
  A typical Web Provider consists of the following two files:
  1. A _Virtual Repo_ file (see below for more details). This file will usually have the _*.json_ extenssion (or _php/aspx_ for server-generated repos) and point to one or more _Web Provider files_    
- 2. A _Web Provider_ file (usually with _html/js/php/aspx_ extenssion) that holds the server logic.
+ 2. A _Web Provider_ file (usually with _html/js/php/aspx_ extenssion) that holds the server logic and retrieves playlists/EPG.
  
- In the ["HelloWorldWeb"](HelloWorldWeb) prohect we have prepared two demo files to illustrate each type and how they are connected with one another:
+ In the ["HelloWorldWeb"](HelloWorldWeb) prohect we have prepared three demo files to illustrate each type and how they are connected with one another:
  1. [Virtual Repo File](HelloWorldWeb/hello_world.json) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.json
- 
- 
+ 2. [Web Provider File](HelloWorldWeb/hello_world.html) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.html
+ 3. [A demo playlist file](HelloWorldWeb/hello_world.m3u) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.m3u
  
  To add this provider to TiviApp, just follow these simple steps:
  1. Open TiviApp and go to "_Settings_"
