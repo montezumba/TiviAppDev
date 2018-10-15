@@ -1,0 +1,39 @@
+#EXTM3U
+
+
+#EXTINF:-1 tvg-logo="https://durian.blender.org/wp-content/uploads/2010/05/title-Sintel.jpg" group-title="HLS Streams",Sintel
+http://ftp.nluug.nl/pub/graphics/blender/demo/movies/Sintel.2010.720p.mkv
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="HLS Streams",Big Buck Bunny
+http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4
+
+#EXTINF:-1 tvg-logo="http://www.valkaama.com/_img/valkama_small.jpg" group-title="HLS Streams",Valkaama
+http://www.valkaama.com/download.php?target=media/movie/Valkaama_720p.mkv
+
+#EXTINF:-1 tvg-logo="https://durian.blender.org/wp-content/uploads/2010/05/title-Sintel.jpg" group-title="Hidden Streams",Sintel 4K
+addon://com.treynix.helloworld/request_live_url/demo/0?refresh=1
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="Hidden Streams",Big Buck Bunny FHD
+addon://com.treynix.helloworld/request_live_url/demo/1
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="Hidden Streams",Big Buck Bunny 4K
+addon://com.treynix.helloworld/request_live_url/demo/2
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="Hidden Streams",Big Buck Bunny 3D
+addon://com.treynix.helloworld/request_live_url/demo/3
+
+#EXTINF:-1 tvg-logo="http://www.valkaama.com/_img/valkama_small.jpg" group-title="Hidden Streams",Valkaama 4K
+addon://com.treynix.helloworld/request_live_url/demo/4
+
+#EXTINF:-1 tvg-logo="http://www.valkaama.com/_img/valkama_small.jpg" group-title="Web Streams",NASA TV Public
+http://www.ustream.tv/nasahdtv
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="Web Streams",Big Buck Bunny Web
+https://developer.jwplayer.com/tools/stream-tester/
+
+#EXTINF:-1 tvg-logo="https://peach.blender.org/wp-content/uploads/poster_bunny_small.jpg?x11217" group-title="Web Streams",Big Buck Bunny Web (2)
+https://videos.pexels.com/videos/flowing-river-852158
+
+#EXTINF:-1 group-title="Hidden Streams",Demo Channel 3
+https://www.google.com
+
