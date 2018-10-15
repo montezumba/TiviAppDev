@@ -79,8 +79,7 @@ Here you will find:
  
 ### Android Provider
 
-If we explore the demo project we can see the observe the following project strucure:
-* [HelloWorldApplication.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldApplication.java)
+If we explore the demo project we can see the observe the following main source files:
 * [HelloWorldConfig.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldConfig.java)
 * [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldMain.java)
 * [HelloWorldService.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java)
