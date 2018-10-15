@@ -62,10 +62,11 @@ Here you will find:
  2. Select the "_Providers_" tab
  3. CLick on the "_+_" button to add a new Provider
  4. Enter the URL for the _Virtual Repo_ file (see above) and click "_OK_".
+ ![Image](Resources/add_new_provider.png)
  
  The Provider info, playlist(s) and TV Guide(s) should appear in the corresponding tabs:
-  ![Image](Resources/web_provider.png)
-  ![Image](Resources/web_playlist.png)
+ ![Image](Resources/web_provider.png)
+ ![Image](Resources/web_playlist.png)
  
 ## Welcome to GitHub Pages
 
