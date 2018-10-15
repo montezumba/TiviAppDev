@@ -8,22 +8,56 @@
 
 <script type="text/javascript">
 
+	// Helper method for extracting GET parameters that are sent by the TiviApp client
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+
+	// Read the 'req' argument, which identifies the current request		
+	var req = getParameterByName("req");
+	// Read the 'proc' argument, which identifies the requested procedure
+	var proc = getParameterByName("proc");
+	
 		
 	switch (proc) {
-		case "request_live_playlist":			
+		case "request_live_playlist":	// This procedure requests a playlist (or several playlists) from this server.		
+			// Use the 'sendPlaylist' method to deliver a single playlist information back to the client. The arguments for this procedure are:
+			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
+			// 'name' - Provides a name for this playlist. This text will be displayed in the Settings menu
+			// 'url' - A URL for this playlist. Should point to a valid "M3U" file.
 			TiviProvider.sendPlaylist(req, "Hello World Playlist", "https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.m3u");
+			// After all playlists were delivered - you should call the 'done' method to finish this session.
+			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
 			TiviProvider.done(req);
 			break;
 		/*	
-		case "request_tvguide":
+		case "request_tvguide": // This procedure requests a TV Guide (or several TV Guides) from this server.		
+			// Use the 'sendTvGuide' procedure to deliver a single TV Guide (EPG) information back to the client. The arguments for this procedure are:
+			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
+			// 'name' - Provides a name for this EPG. This text will be displayed in the Settings menu
+			// 'url' - A URL for this EPG. Should point to a valid "XMLTV" file.
+			// 'validity' - A number of days for which this TV Guide is valid. After this period an automatic retrieval of a newer version will occur.
 			TiviProvider.sendTvGuide(req, "Hello World EPG", "TBD", 2);
+			// After all playlists were delivered - you should call the 'done' method to finish this session.
+			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
 			TiviProvider.done(req);
 			break;
 			*/
 			
 		/*	
 		default:
-			TiviProvider.sendError(req, "Unsupported Request");
+			// Use the 'reportError' procedure to report any errors back to the TiviApp client. The arguments for this procedure are:
+			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
+			// 'error' - Text describing the error. This message may be shown in some cases to the user and will be logged for future debug.
+			TiviProvider.reportError(req, "Unsupported Request");
+			// After all playlists were delivered - you should call the 'done' method to finish this session.
+			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
 			TiviProvider.done();
 			*/
 	}
