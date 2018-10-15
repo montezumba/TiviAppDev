@@ -57,9 +57,16 @@ Here you will find:
 ### Web Provider
  This type of provider is suited for quick and simple content providers (usually ones that already have a website or an IPTV server running). To setup a Web Provider you will need a basic HTML/JS knowledge (or PHP/AJAX/ASP.NET if you are planning to run it on the server side)
  A typical Web Provider consists of the following two files:
- 1. A _Virtual Repo_ file (see below for more details). This file should have the _*.json_ extenssion and point to one or more _Web Provider files_
+ 1. A _Virtual Repo_ file (see below for more details). This file should have the _*.json_ extenssion (or _php/aspx_ for server-generated repos) and point to one or more _Web Provider files_
  2. A _Web Provider_ file (with _html/js/php/aspx_ extenssion) that holds the server logic.
  
+ To add this provider to TiviApp, follow these simple steps:
+ 1. Open TiviApp and go to _Settings_
+ 2. Select the _Providers_ tab
+ 3. CLick on the "+" button to add a new Provider
+ 4. Enter the URL for the _Virtual Repo_ file (see above) and click _OK_.
+ 
+ The provided playlist(s) and TV Guide(s) should appear in the corresponding tabs
  
 ## Welcome to GitHub Pages
 
