@@ -5,7 +5,7 @@
 				"name":"Hello World Web",
 				"service":"https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.html",
 				"author":"Treynix",
-				"description":"A demo web provider for demonstrating basic web-provider capabilities",
+				"description":"A demo Web Provider for demonstrating basic provider capabilities",
 				"version":"1",
 				"versionName":"0.1",
 				"path":"virtual",
