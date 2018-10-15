@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Hello World Web Provider</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+		
+	switch (proc) {
+		case "request_live_playlist":
+			TiviProvider.sendPlaylist(req, "Hello World Playlist", "https://www.dropbox.com/s/w63c2wfgpwyqujv/hello_world.m3u?dl=1");
+			TiviProvider.done(req);
+			break;
+		/*	
+		case "request_tvguide":
+			TiviProvider.sendTvGuide(req, "Hello World EPG", "TBD", 2);
+			TiviProvider.done(req);
+			break;
+			*/
+		default:
+			TiviProvider.sendError(req, "Unsupported Request");
+			TiviProvider.done();
+	}
+		
+
+		
+		
+</script>
+
+</div>
+</body>
+</html>
