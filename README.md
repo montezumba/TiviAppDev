@@ -26,10 +26,6 @@ Here you will find:
  2. **Memoryless**. Your code should respond only to the given request. There is no need to store or rely on data from previous requests as it most likely irrelevant.
  3. **Responsive**. You should provide a response to any request from the client, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
  4. **Compact** (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
- 
-
- 
- ![Image](Resources/drama_fullscreen.PNG)
 
 ## Getting Started
 
@@ -50,7 +46,8 @@ Here you will find:
  4. Build the project and run on your Android device.
  5. This project has no default Activity, so you shouldn't see anything running after clicking on "_Run_"
  6. Open TiviApp, choose "_Settings_" and select the "_Providers_" tab. You should see the following new Provider in that list:
- 
+ ![Image](Resources/android_provider.png)
+ ![Image](Resources/android_playlists.png)
  
  Each Content Provider is hosted on a repository (server for example), which is described by a special _JSON_ file. TiviApp has one such repository embedded within the main application - the _Official TiviApp Repository_. If your Provider is not hosted there, the user should explicitly add your repository by providing the path to the corresponding JSON. (see below)
 
