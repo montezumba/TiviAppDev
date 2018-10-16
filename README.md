@@ -87,10 +87,31 @@ If we explore the demo project we can see the observe the following source files
 
 The `AndroidManifest.xml` configuration files should be configured as follows:
 * Provide the necessary permissions for providing the content. Usually these are required for most typical providers:
-```
- <uses-permission android:name="android.permission.INTERNET" />
+```<uses-permission android:name="android.permission.INTERNET" />
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ ``` 
+* Declare your _Application_ class:
+```android:name="HelloWorldApplication"```
+* Declare your _Service_ class:
+``` <service android:name="HelloWorldService" >
 ```
+* Provide the following action filter:
+```
+    <intent-filter>
+        <action android:name="com.treynix.helloworld.ACTION_ADDON_REQUEST" />
+        <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_REGISTER" />
+        <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_KILL" />
+    </intent-filter>
+```
+* Provide the following meta data tags, based on the feature your 
+            <meta-data android:name="playlist_support" android:value="true"/>
+            <meta-data android:name="tvguide_support" android:value="true"/>
+            <meta-data android:name="video_support" android:value="true"/>
+
+
+        </service>
+```
+  
  
 ## Welcome to GitHub Pages
 
