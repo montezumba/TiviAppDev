@@ -79,10 +79,18 @@ Here you will find:
  
 ### Android Provider
 
-If we explore the demo project we can see the observe the following main source files:
-* [HelloWorldConfig.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldConfig.java)
-* [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldMain.java)
-* [HelloWorldService.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java)
+If we explore the demo project we can see the observe the following source files:
+* [HelloWorldConfig.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldConfig.java): This class holds all the required configuration of this provider.
+* [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldMain.java): This class is the entry point for the server. The developer should override the basic callbacks for handling TiviApp requests and other various server events.
+* [HelloWorldService.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java): Registers the specific _Config_ and the _Main_ classes above to the TiviApp Providers framework.
+* [HelloWorldApplication.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java): This class implements the required _MultiDex_ support (required by some of the dependicies).
+
+The `AndroidManifest.xml` configuration files should be configured as follows:
+* Provide the necessary permissions for providing the content. Usually these are required for most typical providers:
+```
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
  
 ## Welcome to GitHub Pages
 
