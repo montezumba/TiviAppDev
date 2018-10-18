@@ -158,7 +158,9 @@ The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treyni
 
 **WARNING: All these methods are blocking. Remember: you are implementing a server and the best practice here is to avoid "heavy" logic. However, if you do need perform some blocking operations - use the `Worker` utility to allow parallel execution.**
 
+### Web Provider
 
+ In this section we will provide an overview the basic concepts of Provider Development. We assume here that you already cloned this repo and you know how to build and run the corresponding demo projects.
  
 ## Welcome to GitHub Pages
 
