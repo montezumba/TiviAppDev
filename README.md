@@ -156,7 +156,7 @@ The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treyni
 
 * _onDestroy_ : used to clean-up resources (when needed) and to wrap things up. 
 
-
+**WARNING: All these methods are blocking. Remember: you are implementing a server and the best practice here is to avoid "heavy" logic. However, if you do need perform some blocking operations - use the `Worker` utility to allow parallel execution.**
 
 
  
