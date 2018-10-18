@@ -92,7 +92,9 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
  
 1. Declare your _Application_ class:
 
-```android:name="HelloWorldApplication"```
+```
+android:name="HelloWorldApplication"
+```
 
 2. Declare your _Service_ class:
 
