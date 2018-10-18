@@ -86,9 +86,10 @@ If we explore the demo project we can see the observe the following source files
 The `AndroidManifest.xml` configuration files should be configured as follows:
 * Provide the necessary permissions for providing the content. Usually these are required for most typical providers:
 
-```<uses-permission android:name="android.permission.INTERNET" />
+```
+ <uses-permission android:name="android.permission.INTERNET" />
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
- ``` 
+``` 
  
 1. Declare your _Application_ class:
 
