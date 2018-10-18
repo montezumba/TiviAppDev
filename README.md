@@ -137,9 +137,14 @@ public HelloWorldConfig() {
 ```
 
 * _Provider Name_: this text will appear in the _Providers_ settings menu
-* _Maximal Execution Time_: this sets the maximum allowed time for a single request to be processed.
+* _Maximal Execution Time_: sets the maximum allowed time for a single request to be processed.
 
-WARNING: Setting to high value is not recommended. TiviApp has its own timeout mechanism, which will deactivate non-responsive providers. Each provider should detect handle its own timeouts and errors.
+WARNING: Setting too high values is not recommended. TiviApp has its own timeout mechanism, which will deactivate non-responsive providers. Each provider should detect and handle its own timeouts and errors.
+
+* _Connection Timeout_: sets the maximum allowed time for the server to respond to incomming requests
+* _Requests Limit_: sets the maximal number of requests that this server can handle simultaniously
+* _Provider Unique Identifier: a unique string that will identify this provider. It is recommended to use the _Package Name_ of the server application for this field
+* _Repository Url_: provides a URL to a via
 
 
 
