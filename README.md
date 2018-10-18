@@ -91,7 +91,8 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
 1. Declare your _Application_ class:
 ```android:name="HelloWorldApplication"```
 2. Declare your _Service_ class:
-``` <service android:name="HelloWorldService" >
+``` 
+<service android:name="HelloWorldService" >
 ```
 3. Provide the following intent filter:
 ```
@@ -121,8 +122,11 @@ public HelloWorldConfig() {
 	}
 ```
 * _Provider Name_: this text will appear in the _Providers_ settings menu
-* _Maximal Execution Time_: this sets the maximum allowed time for a single request to be processed. 
+* _Maximal Execution Time_: this sets the maximum allowed time for a single request to be processed.
+
 WARNING: Setting to high value is not recommended. TiviApp has its own timeout mechanism, which will deactivate non-responsive providers. Each provider should detect handle its own timeouts and errors.
+
+
 
  
 ## Welcome to GitHub Pages
