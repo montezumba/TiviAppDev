@@ -83,7 +83,7 @@ If we explore the demo project we can see the observe the following source files
 * [HelloWorldService.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java): Registers the specific _Config_ and the _Main_ classes above to the TiviApp Providers framework.
 * [HelloWorldApplication.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldService.java): This class implements the required _MultiDex_ support (required by some of the dependicies).
 
-The `AndroidManifest.xml` configuration files should be configured as follows:
+The [AndroidManifest.xml](HelloWorld/HelloWorldProvider/src/main/AndroidManifest.xml) configuration files should be configured as follows:
 * Provide the necessary permissions for providing the content. Usually these are required for most typical providers:
 
 ```
@@ -91,19 +91,19 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ``` 
  
-1. Declare your _Application_ class:
+* Declare your _Application_ class:
 
 ```
 android:name="HelloWorldApplication"
 ```
 
-2. Declare your _Service_ class:
+* Declare your _Service_ class:
 
 ``` 
 <service android:name="HelloWorldService" >
 ```
 
-3. Provide the following intent filter:
+* Provide the following intent filter:
 
 ```
     <intent-filter>
@@ -113,7 +113,7 @@ android:name="HelloWorldApplication"
     </intent-filter>
 ```
 
-4. Provide the following meta data tags, based on the supported features (request types) of your provider:
+* Provide the following meta data tags, based on the supported features (request types) of your provider:
 
 ```
     <meta-data android:name="playlist_support" android:value="true"/>
