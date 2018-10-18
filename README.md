@@ -88,12 +88,12 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
 ```<uses-permission android:name="android.permission.INTERNET" />
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
  ``` 
-* Declare your _Application_ class:
+1. Declare your _Application_ class:
 ```android:name="HelloWorldApplication"```
-* Declare your _Service_ class:
+2. Declare your _Service_ class:
 ``` <service android:name="HelloWorldService" >
 ```
-* Provide the following action filter:
+3. Provide the following intent filter:
 ```
     <intent-filter>
         <action android:name="com.treynix.helloworld.ACTION_ADDON_REQUEST" />
@@ -101,13 +101,29 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
         <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_KILL" />
     </intent-filter>
 ```
-* Provide the following meta data tags, based on the supported features (request types) of your provider:
+4. Provide the following meta data tags, based on the supported features (request types) of your provider:
 ```
-            <meta-data android:name="playlist_support" android:value="true"/>
-            <meta-data android:name="tvguide_support" android:value="true"/>
-            <meta-data android:name="video_support" android:value="true"/>        
+    <meta-data android:name="playlist_support" android:value="true"/>
+    <meta-data android:name="tvguide_support" android:value="true"/>
+    <meta-data android:name="video_support" android:value="true"/>        
 ```
- 
+
+In the [HelloWorldConfig.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldConfig.java) you should provide the basic configuration to your provider, based on the following base-constructor arguments:
+```
+public HelloWorldConfig() {
+		super(	"Hello World Provider",
+				5 * Constants.MINUTES,
+				5 * Constants.MINUTES,
+				10,
+				HelloWorldConfig.class.getPackage().getName(),
+                null
+                );
+	}
+```
+* _Provider Name_: this text will appear in the _Providers_ settings menu
+* _Maximal Execution Time_: this sets the maximum allowed time for a single request to be processed. 
+WARNING: Setting to high value is not recommended. TiviApp has its own timeout mechanism, which will deactivate non-responsive providers. Each provider should detect handle its own timeouts and errors.
+
  
 ## Welcome to GitHub Pages
 
