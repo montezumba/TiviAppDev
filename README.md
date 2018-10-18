@@ -18,14 +18,14 @@ Here you will find:
 
  
  There are two types of Providers that are currently supported by TiviApp:
- - **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android Studio project in this repository
- - **Web Provider**: A Provider that comes in a form of a web application. This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
+ * **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android Studio project in this repository
+ * **Web Provider**: A Provider that comes in a form of a web application. This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
  
  A Provider can be also viewed as a small _server_ that handles various requests from the TiviApp client. Therefore your code should be designed and developed according to the following basic principles:
- 1. **Efficiency**. Upon receiving a request from the client, the server should provide a response as quickly as possible. If your code is unbale to send a response to the client within a reasonable amount of time - a timeout will be invoked and your content will be ignored by TiviApp.
- 2. **Memoryless**. Your code should respond only to the given request. There is no need to store or rely on data from previous requests as it most likely irrelevant.
- 3. **Responsive**. You should provide a response to any request from the client, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
- 4. **Compact** (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
+ * **Efficiency**. Upon receiving a request from the client, the server should provide a response as quickly as possible. If your code is unbale to send a response to the client within a reasonable amount of time - a timeout will be invoked and your content will be ignored by TiviApp.
+ * **Memoryless**. Your code should respond only to the given request. There is no need to store or rely on data from previous requests as it most likely irrelevant.
+ * **Responsive**. You should provide a response to any request from the client, even if an error has been found during the execution of your logic. TiviApp Provider Platform has APIs for reporting errors to the client. Some of them will be displayed to the user.
+ * **Compact** (for Android Provider). Avoid allocating memory on the heap and free it all upon receiving the ```onDestroy``` event.
 
 ## Getting Started
 
@@ -103,17 +103,13 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
         <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_KILL" />
     </intent-filter>
 ```
-* Provide the following meta data tags, based on the supported features of your provider:
+* Provide the following meta data tags, based on the supported features (request types) of your provider:
 ```
             <meta-data android:name="playlist_support" android:value="true"/>
             <meta-data android:name="tvguide_support" android:value="true"/>
             <meta-data android:name="video_support" android:value="true"/>        
 ```
-  Valid options are:
-    - _playlist_support_ to indicate that your server can handle playlists requests (expected result is a URL to _M3U_ file)
-    - _tvguide_support_ to indicate that your server can handle tv-guide requests (expected result is a URL to _XMLTV_ file)
-    - _video_support_ to indicate that your server can handled encoded URLs and transform them into valid video streams (expected reuslt is a URL to a playable stream)
-    - _virtual_support_ to indicate that your servers can operate as a "hub" that broadcasts requests to other virtual providers (advanced option)
+ 
  
 ## Welcome to GitHub Pages
 
