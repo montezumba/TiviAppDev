@@ -103,15 +103,17 @@ The `AndroidManifest.xml` configuration files should be configured as follows:
         <action android:name="com.treynix.tiviapp.action.ACTION_PROVIDER_KILL" />
     </intent-filter>
 ```
-* Provide the following meta data tags, based on the feature your 
+* Provide the following meta data tags, based on the supported features of your provider:
+```
             <meta-data android:name="playlist_support" android:value="true"/>
             <meta-data android:name="tvguide_support" android:value="true"/>
-            <meta-data android:name="video_support" android:value="true"/>
-
-
-        </service>
+            <meta-data android:name="video_support" android:value="true"/>        
 ```
-  
+  Valid options are:
+    - _playlist_support_ to indicate that your server can handle playlists requests (expected result is a URL to _M3U_ file)
+    - _tvguide_support_ to indicate that your server can handle tv-guide requests (expected result is a URL to _XMLTV_ file)
+    - _video_support_ to indicate that your server can handled encoded URLs and transform them into valid video streams (expected reuslt is a URL to a playable stream)
+    - _virtual_support_ to indicate that your servers can operate as a "hub" that broadcasts requests to other virtual providers (advanced option)
  
 ## Welcome to GitHub Pages
 
