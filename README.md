@@ -144,7 +144,18 @@ WARNING: Setting too high values is not recommended. TiviApp has its own timeout
 * _Connection Timeout_: sets the maximum allowed time for the server to respond to incomming requests
 * _Requests Limit_: sets the maximal number of requests that this server can handle simultaniously
 * _Provider Unique Identifier: a unique string that will identify this provider. It is recommended to use the _Package Name_ of the server application for this field
-* _Repository Url_: provides a URL to a via
+* _Repository Url_: provides a URL to a repository server (optional)
+
+The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treynix/helloworld/HelloWorldMain.java) handles the main server logic by implementing the following interface methods:
+
+* _onInit_ : handles the initialization event. In this method you should implement all the "heavy" logic for preparing and setting the data required for handling future requests.
+
+* _onStart_ : handles the actual requests. Each new request will trigger this callback, so use the `Worker` utility to handle requests asynchroniously.
+
+* _onCancel_ : handles the case when the TiviApp client requests to cancel a previously sent request. It is important to use this callback in order to avoud sending irrelevant or outdated data.
+
+* _onDestroy_ : used to clean-up resources (when needed) and to wrap things up. 
+
 
 
 
