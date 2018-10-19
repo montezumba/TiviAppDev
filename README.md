@@ -160,7 +160,11 @@ The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treyni
 
 ### Web Provider
 
- In this section we will provide an overview the basic concepts of Provider Development. We assume here that you already cloned this repo and you know how to build and run the corresponding demo projects.
+ Working with Web Providers is much more simple. TiviApp has its own, built-in Android Provider that takes care of all the abovementioned configrations. This built-in provider transmits all the requests to third-party "virtual" providers by calling their _Web Provider File_ URL and passing the applicable parameters.
+ 
+ TiviApp provides a _WebView_ API framework to handle incomming events and provide the required outputs. This API can be accessed  within your web application by addressing the _TiviProvider_ javascript object.
+ The _Web Provider File_ should just implement the following callbacks:
+ 
  
 ## Welcome to GitHub Pages
 
