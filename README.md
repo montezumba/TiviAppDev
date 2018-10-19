@@ -79,7 +79,11 @@ Here you will find:
  	* _Request Id_ - a unique identifier for this request. 	
 	* _Proc_ - the request type. Can be either: "_request_live_playlist_", "request_tvguide" or "request_live_url".  
 	* _Query_ - optional query string for this request (for example: requested language).
- 2. Your server responds to each client by retrieving the following date:
+ 2. Your server responds to each client by retrieving the following data:
+ 	* _Request Id_ - the id of the corresponding request
+	* For "Playlist Request": the response should contain the name of the playlist and its URL
+	* For "TV Guide Request" : the response should contain the name of the TV Guide, its URL and its validity date
+	* For "Live URL Request" : the response should contain the name of the playable stream and its URL
  
  
 ### Android Provider
