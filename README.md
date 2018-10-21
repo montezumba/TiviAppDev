@@ -173,10 +173,15 @@ The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treyni
 
  Working with Web Providers is much more simple. TiviApp has its own, built-in Android Provider that takes care of all the abovementioned configrations. This built-in provider transmits all the requests to third-party "virtual" providers by calling their _Web Provider File_ URL and passing the applicable parameters.
  
- TiviApp provides a _WebView_ API framework to handle incomming events and provide the required outputs. This API can be accessed  within your web application by addressing the _TiviProvider_ javascript object.
-The _Web Provider File_ should parse the following GET parameters:
+ TiviApp provides a _WebView_ API framework to handle incomming events and provide the required outputs. This API can be accessed  within your web application by using the _TiviProvider_ javascript object.
+The _Web Provider File_ should check and parse the following GET parameters:
 * _req_ : specifies the request id. This value should be mirrored back to the client as part of the response callback.
 * _proc_ : the requested procedure. 
+
+The response should be provided by calling the following API methods:
+* `sendPlaylist(req, playlist_url)` - this will send a single playlist URL back to the TiviApp client. You can send several playlist URLs per request.
+* `sendTvGuide(req, tvguide_rul, validity_days)` - this will send a single TV Guide URL back to the TiviApp client. this will send a single EPG URL back to the TiviApp client. You can send several EPG URLs per request.
+* `done()` - this mandatory must be called to indicate that you finished handling the current request. 
 	
  
  
