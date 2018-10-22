@@ -181,7 +181,8 @@ The _Web Provider File_ should check and parse the following GET parameters:
 The response should be provided by calling the following API methods:
 * `sendPlaylist(req, playlist_url)` - this will send a single playlist URL back to the TiviApp client. You can send several playlist URLs per request.
 * `sendTvGuide(req, tvguide_rul, validity_days)` - this will send a single TV Guide URL back to the TiviApp client. this will send a single EPG URL back to the TiviApp client. You can send several EPG URLs per request.
-* `done()` - this mandatory must be called to indicate that you finished handling the current request. 
+* `done()` - this mandatory method must be called to indicate that you finished handling the current request. 
+* `reportError()` - use this method to report any errors back to the TiviApp client. Please note that it is still required to call the `done` method afterwards to finish that handling of the current request.
 	
  
  
