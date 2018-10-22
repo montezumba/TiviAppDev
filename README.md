@@ -173,19 +173,49 @@ The [HelloWorldMain.java](HelloWorld/HelloWorldProvider/src/main/java/com/treyni
 
  Working with Web Providers is much more simple. TiviApp has its own, built-in Android Provider that takes care of all the abovementioned configrations. This built-in provider transmits all the requests to third-party "virtual" providers by calling their _Web Provider File_ URL and passing the applicable parameters.
  
- TiviApp provides a _WebView_ API framework to handle incomming events and provide the required outputs. This API can be accessed  within your web application by using the _TiviProvider_ javascript object.
-The _Web Provider File_ should check and parse the following GET parameters:
-* _req_ : specifies the request id. This value should be mirrored back to the client as part of the response callback.
-* _proc_ : the requested procedure. 
+ TiviApp provides a _WebView_ API framework to handle incomming events and provide the required outputs. This API can be accessed  within your web application by using the `TiviProvider` javascript object.
+To handle incomming requests, the _Web Provider File_ should check and parse the following GET parameters:
+* `req` - specifies the request id. This value should be mirrored back to the client as part of the response callback.
+* `proc` - the requested procedure. 
 
-The response should be provided by calling the following API methods:
-* `sendPlaylist(req, playlist_url)` - this will send a single playlist URL back to the TiviApp client. You can send several playlist URLs per request.
-* `sendTvGuide(req, tvguide_rul, validity_days)` - this will send a single TV Guide URL back to the TiviApp client. this will send a single EPG URL back to the TiviApp client. You can send several EPG URLs per request.
-* `done()` - this mandatory method must be called to indicate that you finished handling the current request. 
-* `reportError()` - use this method to report any errors back to the TiviApp client. Please note that it is still required to call the `done` method afterwards to finish that handling of the current request.
+The response should be sent back to the client by calling the following API methods:
+* `TiviProvider.sendPlaylist(req, playlist_url)` - this will send a single playlist URL back to the TiviApp client. You can send several playlist URLs per request.
+* `TiviProvider.sendTvGuide(req, tvguide_rul, validity_days)` - this will send a single EPG URL back to the TiviApp client. You can send several EPG URLs per request.
+* `TiviProvider.done()` - this mandatory method must be called to indicate that you finished handling the current request (otherwise you provider will be considered as not responding by the TiviApp client).
+* `TiviProvider.reportError()` - use this method to report any errors back to the TiviApp client. Please note that it is still required to call the `done` method afterwards to finish that handling of the current request.
 	
- 
- 
+### Repository
+
+For both Android and Web Providers you may define a repository file to provide additional meta-data about it. Providing a _Repository File_ is mandatory for Web Providers, since they are used as an input URL for the user that wants to add them to TiviApp. 
+
+The _Repository File_ should have the following structure:
+```
+{
+	"addons":
+		[			
+			{			
+				"name":"Hello World Web",
+				"service":"https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.html",
+				"author":"Treynix",
+				"description":"A demo Web Provider for demonstrating basic provider capabilities",
+				"version":"1",
+				"versionName":"0.1",
+				"path":"virtual",
+				"supportedFeatures": [					
+					"playlist_support"								
+				]
+			}
+			
+		]
+}
+```
+* `name` - the displayable name of this provider
+* `service` - for Android Provider that would be the package name, for Web Provider that should point to the Web Provider URL on your server.
+* `author` - the displayable name of the author/owner of this provider.
+* `description` - this text will be displayed in the _Providers_ settings page to describe your provider.
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/montezumba/TiviAppDev/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
