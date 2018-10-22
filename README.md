@@ -210,9 +210,13 @@ The _Repository File_ should have the following structure:
 }
 ```
 * `name` - the displayable name of this provider
-* `service` - for Android Provider that would be the package name, for Web Provider that should point to the Web Provider URL on your server.
+* `service` - for Android Providers that would be the package name, for Web Providers that should point to the Web Provider URL on your server.
 * `author` - the displayable name of the author/owner of this provider.
 * `description` - this text will be displayed in the _Providers_ settings page to describe your provider.
+* `version` - the version id of this provider. Should be a simple numeric (integer) id. Greater ids will be considered as newer versions.
+* `versionName` - the displayable version name. This can be a textual value describing your version numbering convention.
+* `path` - for Android Providers that should point to the update path for this application (usually a Play Store URL), for Web Providers you should state: `virtual`
+* `supportedFeatures` - an _JSON_ array that enumerates all the supported requests for this Provider.
 
 
 
