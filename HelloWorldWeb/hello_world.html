@@ -31,7 +31,7 @@
 			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
 			// 'name' - Provides a name for this playlist. This text will be displayed in the Settings menu
 			// 'url' - A URL for this playlist. Should point to a valid "M3U" file.
-			TiviProvider.sendPlaylist(req, "Hello World Playlist", "https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.m3u", "VOD");
+			TiviProvider.sendPlaylist(req, "Hello World Playlist", "https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.m3u", "LIVE");
 			// After all playlists were delivered - you should call the 'done' method to finish this session.
 			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
 			TiviProvider.done(req);
