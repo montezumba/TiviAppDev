@@ -43,7 +43,7 @@ Here you will find:
  2. Select the HelloWorld project at C:\TiviAppDev\HelloWorld
  3. If a message appears that request further configuration, click on "_Configure_"
  ![image](Resources/AndroidConfigure.PNG)
- 4. Build the project and run on your Android device.
+ 4. Build the project and run it on your Android device or emulator.
  5. This project has no default Activity, so you shouldn't see anything running after clicking on "_Run_"
  6. Open TiviApp, choose "_Settings_" and select the "_Providers_" tab. You should see the following new Provider in that list:
  ![Image](Resources/android_provider.png)
