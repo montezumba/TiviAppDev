@@ -5,21 +5,21 @@ Here you will find:
 - An introduction to the Content Provider concept
 - A quick guide on how to get started with developing your own Content Provider
 - "Hello World" projects overview
-- A guide on how to upload your working Provider to our main repository
  
- If you are still not fimiliar with the TiviApp application, please visit our [website](http://tiviapplive.com).
+ If you are still not fimiliar with the TiviApp application, please visit our [website](http://tiviapplive.com) or just download it from [Google Play](https://play.google.com/store/apps/details?id=com.treynix.tiviapplive&hl=en).
  
 ## Introduction
  
- A Content Provider is basically a third-party piece of code (sometimes called "plugin" or "addon") that can provide usefull content for TiviApp users. This content can be either:
+ A Content Provider is basically a third-party piece of code (sometimes called a "plugin" or "addon") that can provide usefull content for TiviApp users. This content can be either:
  - One or more playlists (**Channel Lists**) in _M3U_ format
  - One or more EPG (**TV Guides**) in _XMLTV_ format
  - A playable video/audio stream (**Channel**) in one of the supported formats 
 
  
- There are two types of Providers that are currently supported by TiviApp:
+ There are three types of Providers that are currently supported by TiviApp:
  * **Android Provider**: A Provider that comes in a form of an Android application. This kind of provider is demonstrated by the ["HelloWorld"](HelloWorld) Android Studio project in this repository
  * **Web Provider**: A Provider that comes in a form of a web application. This kind of provider is demonstrated by the ["HelloWorldWeb"](HelloWorldWeb) web project.
+ * **Xtream-Codes Provider**: A built-in provider for content that is powered by [Xtream-Codes](https://xtream-codes.com/) IPTV panel
  
  A Provider can be also viewed as a small _server_ that handles various requests from the TiviApp client. Therefore your code should be designed and developed according to the following basic principles:
  * **Efficiency**. Upon receiving a request from the client, the server should provide a response as quickly as possible. If your code is unbale to send a response to the client within a reasonable amount of time - a timeout will be invoked and your content will be ignored by TiviApp.
@@ -29,11 +29,11 @@ Here you will find:
 
 ## Getting Started
 
- The simpliest way of getting started is to clone this repository and start exploring the demo projects. The following sections will guide you through the neccessary steps for getting the "Hello World" projects up and running on your machine. So use your favorite Git client to cone this repository at: ```https://github.com/montezumba/TiviAppDev.git``` and let's get started!
+ The simpliest way of getting started is to clone this repository and start exploring the demo projects. The following sections will guide you through the neccessary steps for getting the "Hello World" projects up and running on your machine. So use your favorite Git client to clone this repository at: ```https://github.com/montezumba/TiviAppDev.git``` and let's get started!
  
 ### Android Provider
  
- This type of provider is the most powerfull option and is best suited for Android Developers who wish to add some non-trivial logic that should be executed on a native environment. For this, you will need to have some knowledge of developing Android applications and the following environment set up:
+ This type of provider is the most powerfull option and is best suited for Android Developers who wish to add some non-trivial logic that should be executed on a native environment. For this, you will need to have some knowledge on developing Android applications and the following environment set up:
  - Android Studio 3.1.3 or above.
  - Android SDK support for API 27. 
  - An Android device running Android 4.2 or higher
@@ -57,7 +57,7 @@ Here you will find:
  1. A _Virtual Repo_ file (see below for more details). This file will usually have the _*.json_ extenssion (or _php/aspx_ for server-generated repos) and point to one or more _Web Provider files_    
  2. A _Web Provider_ file (usually with _html/js/php/aspx_ extenssion) that holds the server logic and retrieves playlists/EPG.
  
- In the ["HelloWorldWeb"](HelloWorldWeb) prohect we have prepared three demo files to illustrate each type and how they are connected with one another:
+ In the ["HelloWorldWeb"](HelloWorldWeb) project we have prepared three demo files to illustrate each type and how they are connected with one another:
  1. [Virtual Repo File](HelloWorldWeb/hello_world.json) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.json
  2. [Web Provider File](HelloWorldWeb/hello_world.html) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.html
  3. [A demo playlist file](HelloWorldWeb/hello_world.m3u) that can be accessed globally at: https://montezumba.github.io/TiviAppDev/HelloWorldWeb/hello_world.m3u
