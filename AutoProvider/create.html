@@ -1,0 +1,182 @@
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AutoProvider Tool</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+
+
+
+
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); 
+        }, false); 
+
+    function hideURLbar() { 
+        window.scrollTo(0,1); 
+    } 
+
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+
+            // Check if the XMLHttpRequest object has a "withCredentials" property.
+            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+            xhr.open(method, url, true);
+
+        } else if (typeof XDomainRequest != "undefined") {
+
+            // Otherwise, check if XDomainRequest.
+            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+
+        } else {
+
+            // Otherwise, CORS is not supported by the browser.
+            xhr = null;
+
+        }
+        return xhr;
+    }
+
+
+    jQuery.getCORS = function(url, func) {
+        if(func == undefined) func = function(){};
+        return $.ajax({
+            type: 'GET', 
+            url: url,             
+            dataType: 'json', 
+            contentType: 'application/x-www-form-urlencoded', 
+            xhrFields: { withCredentials: true }, 
+            success: function(res) { func(res) }, 
+            error: function() { 
+                    func({}) 
+            }
+        });
+    }
+
+    function sendCORS(url, func) {
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.withCredentials = true
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 2) {// do something}
+            
+          }
+        }
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.send(json)
+    }
+
+    function createProvider() {
+        //alert("ku");
+        var name = document.getElementById("providerForm").elements["name"].value;
+        var playlist = document.getElementById("providerForm").elements["playlist"].value;
+        var epg = document.getElementById("providerForm").elements["epg"].value;
+
+        var resultBox = document.getElementById("resultBox");
+        resultBox.style.display = "initial";
+
+        var url = "https://montezumba.github.io/TiviAppDev/AutoProvider/provider.html?purl="+playlist+"&epg="+epg+"#"+name;
+        
+        document.getElementById("url").src = "http://tinyurl.com/api-create.php?url="+url;
+        document.getElementById("username").innerHTML = "@"+name;
+        
+        //document.writeln(name);
+        //document.writeln(playlist);
+        //document.writeln(epg);
+        //alert(v);
+    }
+
+</script>
+    <!-- Custom Theme files -->
+    <link href="create.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <!--
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+-->
+    <link href="fonts.css" rel="stylesheet">
+    <!-- //web font -->
+</head>
+
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>TiviApp AutoProvider Tool</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form id="providerForm" method="dialog" onsubmit="createProvider()">
+                    <input class="text" type="text" id="name" placeholder="Provider Name" required=""/>
+                    <br />
+                    <input class="text" type="text" id="playlist" placeholder="Link to Playlist   (*.M3U)" required=""/>
+                    <br />
+                    <input class="text" type="text" id="epg" placeholder="Link to EPG   (*.XMLTV)" required=""/>
+                    <br />
+                    <br />
+                    <div class="wthree-text">
+                        <label class="anim">
+                            <input type="checkbox" class="checkbox" required=""/>
+                            <span>I Agree To The <a href="http://tiviapplive.com/terms-and-conditions/"
+                                    target="_blank">Terms & Conditions</a></span>
+                        </label>
+                        <div class="clear"> </div>
+                    </div>
+                    <input type="submit" value="Create Provider">
+                </form>
+
+                <div class="created-url" id="resultBox">
+                    Enter the following data in the "Add New Provider" dialog:     
+                    <br/><br/>
+                    URL:
+                    <br/>
+                    <iframe class="tinyurl" id="url" src="https://tinyurl.com"></iframe>                                                                       
+                    <br/>
+                    Username:    <span id="username"></span>
+                    <br/><br/>
+                    <image src="../Resources/auto_provider.png" />
+                    
+                </div>
+                
+
+            </div>
+
+        </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            <p>© 2019 Treynix. All rights reserved | Design by <a href="https://colorlib.com/"
+                    target="_blank">Colorlib</a></p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+
+
+
+
+
+</body>
+
+</html>
