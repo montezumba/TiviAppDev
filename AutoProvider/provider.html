@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Hello World Web Provider</title>
+<title>TiviApp AutoProvider</title>
 </head>
 <body>
 
@@ -19,6 +19,21 @@
 		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
 
+	function decodeString(str) {
+		var result = str;
+		if(str) {
+			result = str.replace(/`/g, "%");
+			try {
+				result = decodeURIComponent(result);        
+			} 
+			catch (e) {
+				document.writeln(e);
+			}
+		}
+		return result;		
+    }
+
+
 	// Read the 'req' argument, which identifies the current request		
 	var req = getParameterByName("req");
 	// Read the 'proc' argument, which identifies the requested procedure
@@ -26,40 +41,35 @@
 	
 	var playlistUrl = getParameterByName("purl");	
 	var epg = getParameterByName("epg");
-	document.writeln(playlistUrl);
-	document.writeln(epg)
+	var name = getParameterByName("name");
+
+	playlistUrl = decodeString(playlistUrl);
+	epg = decodeString(epg);
+	name = decodeString(name);
+
+	document.writeln("playlist="+playlistUrl);
+	document.writeln("epg="+epg);
+	document.writeln("name="+name);
 		
 	switch (proc) {
 		case "request_live_playlist":	
 			if(playlistUrl) {
-				TiviProvider.sendPlaylist(req, "Playlist 1", playlistUrl, "LIVE");							
+				TiviProvider.sendPlaylist(req, name+" Playlist", playlistUrl, "LIVE");							
 			}
 			TiviProvider.done(req);
 			break;
-		/*	
-		case "request_tvguide": // This procedure requests a TV Guide (or several TV Guides) from this server.		
-			// Use the 'sendTvGuide' procedure to deliver a single TV Guide (EPG) information back to the client. The arguments for this procedure are:
-			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
-			// 'name' - Provides a name for this EPG. This text will be displayed in the Settings menu
-			// 'url' - A URL for this EPG. Should point to a valid "XMLTV" file.
-			// 'validity' - A number of days for which this TV Guide is valid. After this period an automatic retrieval of a newer version will occur.
-			TiviProvider.sendTvGuide(req, "Hello World EPG", "TBD", 2);
-			// After all playlists were delivered - you should call the 'done' method to finish this session.
-			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
+		
+		case "request_tvguide": 
+			if(epg) {
+				TiviProvider.sendTvGuide(req, name+" TV Guide", epg, 2);
+			}			
 			TiviProvider.done(req);
-			break;
-			*/
-			
-		/*	
-		default:
-			// Use the 'reportError' procedure to report any errors back to the TiviApp client. The arguments for this procedure are:
-			// 'req' - The request identifier. This value should be mirrored "as-is" from what was sent in the 'req' GET argument
-			// 'error' - Text describing the error. This message may be shown in some cases to the user and will be logged for future debug.
-			TiviProvider.reportError(req, "Unsupported Request");
-			// After all playlists were delivered - you should call the 'done' method to finish this session.
-			// WARNING: If you don't call the 'done' method, your Provider will be considered as "not responding". You must finish any request (even if errors were found) by calling 'done'
+			break;			
+					
+		default:			
+			TiviProvider.sendError(req, "Unsupported Request");			
 			TiviProvider.done();
-			*/
+			
 	}
 		
 
