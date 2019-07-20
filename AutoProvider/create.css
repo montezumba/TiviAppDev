@@ -191,6 +191,65 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     color: #fff;
     font-family: 'Roboto', sans-serif;
   }
+
+  input[type="number"] {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 100;
+    width: 45%;
+    display: none;
+    border: none;
+    float: right;
+    padding: 0.8em;
+    border: solid 1px rgba(255, 255, 255, 0.37);
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
+    background-position: -800px 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  select {
+    font-size: 0.9em;
+    color: white;
+    font-weight: 100;
+    width: 45%;
+    display: inline-block;
+    border: none;
+    float: left;
+    padding: 0.8em;
+    border: solid 1px rgba(255, 255, 255, 0.37);
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
+    background-position: -800px 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    font-family: 'Roboto', sans-serif;
+  }
+
+  option {
+      color:black;      
+      padding: 0.8em;
+      border: solid 1px rgba(255, 255, 255, 0.37);
+      -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
+      background-position: -800px 0;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      font-weight: 100;
+      font-size: 0.9em;
+      font-family: 'Roboto', sans-serif;
+  }
+  
   
   input.email, input.text.w3lpass {
     margin: 2em 0;
@@ -202,6 +261,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-position: 0 0;
   }
   
+  .anim {
+    float: left;
+  }
+
   .text:focus::-webkit-input-placeholder, .text:valid::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
     font-size: .9em;
@@ -338,7 +401,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border-color: transparent;
     border-right-color: transparent;
     animation: .4s rippling .4s ease;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;    
   }
   
   @keyframes rippling {
@@ -559,6 +622,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     input[type="text"], input[type="email"], input[type="password"] {
       width: 94%;
     }
+
+    input[type="number"] {
+        width: 45%;
+    }
+
+    select {
+        width: 45%;
+    }
   }
   
   @media(max-width:1366px) {
@@ -614,6 +685,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
     input[type="text"], input[type="email"], input[type="password"] {
       width: 93%;
+    }
+
+    input[type="number"] {
+        width: 45%;
+    }
+
+    select {
+        width: 45%;
     }
   }
   
@@ -676,6 +755,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
     input[type="text"], input[type="email"], input[type="password"] {
       width: 91%;
+    }
+
+    input[type="number"] {
+        width: 44%;
+    }
+
+    select {
+        width: 44%;
     }
   
     .agileits-top p {
@@ -753,6 +840,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     input[type="text"], input[type="email"], input[type="password"] {
       width: 89.5%;
       font-size: 0.85em;
+    }
+
+    input[type="number"] {
+        width: 44%;
+        font-size: 0.85em;
+    }
+
+    select {
+        width: 44%;
+        font-size: 0.85em;
     }
   
     h1 {

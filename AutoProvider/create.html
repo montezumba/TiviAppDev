@@ -25,11 +25,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         window.scrollTo(0,1); 
     } 
 
+    function onArchiveType(t) {
+        var archiveType = document.getElementById("providerForm").elements["archive-type"].value;
+        var archiveDays = document.getElementById("providerForm").elements["archive-days"];
+
+        if(archiveType !== "none") {
+            archiveDays.style.display = "inline-block";
+        }
+        else {
+            archiveDays.style.display = "none";
+        }
+    }
+
     function createProvider() {
         //alert("ku");
         var name = document.getElementById("providerForm").elements["name"].value;
         var playlist = document.getElementById("providerForm").elements["playlist"].value;
         var epg = document.getElementById("providerForm").elements["epg"].value;
+        var archiveType = document.getElementById("providerForm").elements["archive-type"].value;
+        var archiveDays = document.getElementById("providerForm").elements["archive-days"].value;
 
         name = encodeString(name);
         playlist = encodeString(playlist);
@@ -39,9 +53,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         resultBox.style.display = "initial";
 
         var url = "https://montezumba.github.io/TiviAppDev/AutoProvider/provider.html?purl="+playlist+"&epg="+epg+"&name="+name;
+        if(archiveType !== "none" && archiveDays > 0) {
+            url += "&catchup="+archiveType+"&catchup-days="+archiveDays;
+        }
         
         document.getElementById("url").src = "https://tinyurl.com/api-create.php?url="+url;
         document.getElementById("username").innerHTML = "@"+name;
+
+        //document.getElementById("username").innerHTML = url;
         
     }
 
@@ -75,7 +94,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <br />
                     <input class="text" type="text" id="epg" placeholder="Link to EPG   (*.XMLTV)" required=""/>
                     <br />
+                    <select class="text" id="archive-type" placeholder="Catch-Up Type" required onchange="onArchiveType()">                    
+                        <option value="none" selected>No Catch-Up</option>
+                        <option value="default">Default Catch-Up</option>                        
+                    </select>
+                    <input class="text" type="number" min="0" max="30" id="archive-days" placeholder="Catch-Up Duration (Days)" required/>
                     <br />
+                    <br />
+                    <br />                    
                     <div class="wthree-text">
                         <label class="anim">
                             <input type="checkbox" class="checkbox" required=""/>

@@ -42,14 +42,22 @@
 	var playlistUrl = getParameterByName("purl");	
 	var epg = getParameterByName("epg");
 	var name = getParameterByName("name");
+	var catchupType = getParameterByName("catchup");
+	var catchupDays = getParameterByName("catchup-days");
 
 	playlistUrl = decodeString(playlistUrl);
 	epg = decodeString(epg);
 	name = decodeString(name);
-
+	
 	document.writeln("playlist="+playlistUrl);
 	document.writeln("epg="+epg);
 	document.writeln("name="+name);
+	document.writeln("catchup="+catchupType);
+	document.writeln("catchup-days="+catchupDays);
+
+	if(playlistUrl && catchupType) {
+		playlistUrl += "#catchup="+catchupType+"&catchup-days="+catchupDays;
+	}
 		
 	switch (proc) {
 		case "request_live_playlist":	
